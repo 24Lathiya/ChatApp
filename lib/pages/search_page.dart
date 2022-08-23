@@ -62,22 +62,18 @@ class _SearchPageState extends State<SearchPage> {
         children: [
           Container(
             padding: EdgeInsets.only(left: 15, right: 15),
-            color: Colors.teal,
             child: TextField(
+              showCursor: true,
               controller: searchController,
-              cursorColor: Colors.white,
-              style: TextStyle(color: Colors.white),
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: "Group Name",
-                  hintStyle: TextStyle(color: Colors.white),
                   suffixIcon: InkWell(
                     onTap: () {
                       searchGroup(searchController.text.trim());
                     },
                     child: Icon(
                       Icons.search,
-                      color: Colors.white,
                     ),
                   )),
               onChanged: (value) {
@@ -143,7 +139,9 @@ class _SearchPageState extends State<SearchPage> {
                                                 top: 10,
                                                 bottom: 10),
                                             decoration: BoxDecoration(
-                                                color: Colors.teal,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .primary,
                                                 borderRadius:
                                                     BorderRadius.circular(15)),
                                             child: InkWell(
@@ -185,7 +183,12 @@ class _SearchPageState extends State<SearchPage> {
                                               ),
                                             ),
                                           ),
-                                    onTap: () {},
+                                    /* onTap: () {
+                                      Get.to(ChatPage(
+                                          groupId: groupId,
+                                          groupName: groupName,
+                                          userName: userName));
+                                    },*/
                                   );
                                 },
                               )

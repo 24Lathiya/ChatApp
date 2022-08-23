@@ -22,7 +22,7 @@ class Utils {
       ),
       colorText: Colors.white,
       snackPosition: SnackPosition.TOP,
-      backgroundColor: isError ? Colors.redAccent : Colors.teal,
+      backgroundColor: isError ? Colors.redAccent : Colors.green,
     );
   }
 

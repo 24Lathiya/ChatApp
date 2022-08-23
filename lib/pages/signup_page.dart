@@ -74,7 +74,6 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: isLoading
           ? Center(
               child: CircularProgressIndicator(),
@@ -186,7 +185,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
-                            color: Colors.teal,
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Center(
@@ -215,7 +214,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
-                            color: Colors.teal,
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Center(

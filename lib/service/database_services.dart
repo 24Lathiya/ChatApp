@@ -23,8 +23,7 @@ class DatabaseServices {
 
   //get user data
   Future getUserData(String email) async {
-    QuerySnapshot snapshot =
-        await userCollection.where("email", isEqualTo: email).get();
+    var snapshot = await userCollection.where("email", isEqualTo: email).get();
     return snapshot;
   }
 
@@ -41,6 +40,16 @@ class DatabaseServices {
           isEqualTo: groupName,
         )
         .get();
+
+    /*return await Future.wait([
+      userCollection.where("groupName", isEqualTo: groupName).get(),
+      userCollection
+          .where("groupName", isEqualTo: groupName.toUpperCase())
+          .get(),
+      userCollection
+          .where("groupName", isEqualTo: groupName.toLowerCase())
+          .get()
+    ]);*/
   }
 
   Future createGroup(String userName, String groupName) async {

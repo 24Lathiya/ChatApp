@@ -58,7 +58,7 @@ class _GroupInfoPageState extends State<GroupInfoPage> {
           children: [
             Container(
               decoration: BoxDecoration(
-                  color: Colors.teal.withOpacity(0.2),
+                  color: Theme.of(context).colorScheme.primary.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(15)),
               child: ListTile(
                 leading: CircleAvatar(
@@ -160,7 +160,9 @@ class _GroupInfoPageState extends State<GroupInfoPage> {
                                                       top: 10,
                                                       bottom: 10),
                                                   decoration: BoxDecoration(
-                                                      color: Colors.teal,
+                                                      color: Theme.of(context)
+                                                          .colorScheme
+                                                          .primary,
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               15)),

@@ -47,7 +47,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: isLoading
           ? Center(
               child: CircularProgressIndicator(),
@@ -139,7 +138,7 @@ class _LoginPageState extends State<LoginPage> {
                           width: MediaQuery.of(context).size.width,
                           padding: EdgeInsets.all(15),
                           decoration: BoxDecoration(
-                            color: Colors.teal,
+                            color: Theme.of(context).colorScheme.primary,
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Center(

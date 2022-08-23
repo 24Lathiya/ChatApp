@@ -1,3 +1,4 @@
+import 'package:chat_app/helper/theme_provider.dart';
 import 'package:chat_app/helper/user_preferences.dart';
 import 'package:chat_app/helper/utils.dart';
 import 'package:chat_app/pages/chat_page.dart';
@@ -8,6 +9,7 @@ import 'package:chat_app/service/database_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -68,15 +70,23 @@ class _MainPageState extends State<MainPage> {
                     builder: (context) => const SearchPage()));
               },
               icon: const Icon(Icons.search)),
+          IconButton(
+              onPressed: () {
+                setState(() {
+                  Provider.of<ThemeProvider>(context, listen: false)
+                      .swapTheme();
+                });
+              },
+              icon: Icon(Icons.sunny))
         ],
       ),
       drawer: Drawer(
         child: ListView(
           padding: const EdgeInsets.symmetric(vertical: 50),
           children: [
-            const Icon(
+            Icon(
               Icons.account_circle,
-              color: Colors.teal,
+              color: Theme.of(context).colorScheme.primary,
               size: 120,
             ),
             Text(
@@ -98,7 +108,7 @@ class _MainPageState extends State<MainPage> {
                 Icons.group,
               ),
               selected: true,
-              selectedColor: Colors.teal,
+              selectedColor: Theme.of(context).colorScheme.primary,
               title: const Text("Group"),
               onTap: () {},
             ),
@@ -175,6 +185,7 @@ class _MainPageState extends State<MainPage> {
                           getLastMessage(groupId);
                           return ListTile(
                             leading: CircleAvatar(
+                              // backgroundColor:Theme.of(context).colorScheme.primary,
                               child: Text(
                                 groupName.substring(0, 1).toUpperCase(),
                                 style: TextStyle(
@@ -268,7 +279,8 @@ class _MainPageState extends State<MainPage> {
                         ),
                         errorBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(15),
-                          borderSide: BorderSide(color: Colors.red),
+                          borderSide: BorderSide(
+                              color: Theme.of(context).colorScheme.error),
                         )),
                   ),
             actions: [
