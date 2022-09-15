@@ -24,9 +24,10 @@ samples, guidance on mobile development, and a full API reference.
 - Configure Firebase Authentication for iOS
   - get package name (search for 'PRODUCT_BUNDLE_IDENTIFIER')
   - get GoogleService-Info.plist and add to ios Runner folder.
+  - terminal --> cd ios 
   - pod init (if pod is not available)
   - ios/Podfile --> uncomment --> platform :ios, '12.0'
-  - terminal --> cd ios --> pod install
+  - pod install
   
 - Configure Firebase Cloud Filestore
   - create firebase cloud
