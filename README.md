@@ -16,15 +16,16 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 - Configure Firebase Authentication for Android
-  - get package name (search for package=")
+  - get package name (search 'applicationId')
   - get google_service.json and add to android app folder.
   - follow firebase instruction to implement dependencies.
   - app gradle -->  minimumSdk 21 & multiDexEnable true
   
 - Configure Firebase Authentication for iOS
-  - get package name (search for package=")
+  - get package name (search for 'PRODUCT_BUNDLE_IDENTIFIER')
   - get GoogleService-Info.plist and add to ios Runner folder.
-  - ios/Podfile --> platform :ios, '12.0'
+  - pod init (if pod is not available)
+  - ios/Podfile --> uncomment --> platform :ios, '12.0'
   - terminal --> cd ios --> pod install
   
 - Configure Firebase Cloud Filestore
